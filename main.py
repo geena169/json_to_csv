@@ -1,3 +1,7 @@
+# Основной скрипт
+
+# В указанной папке программа находит все файлы для обработки и по очереди их обрабатывает
+
 import sys
 import os
 import json
@@ -67,6 +71,7 @@ def json_format(fi):
         
     return print('\nФайл {file_in} успешно приведен к обрабатываему формату\n')
 
+# Формирование конечного csv файла
 def get_csv():
 
     jf = json_line(file_path_out_json + 'json_mod_' + fi.split('.')[0] + '.json')
@@ -75,11 +80,13 @@ def get_csv():
     
     while (line:= next(jf,False)):
         
-        #line = str_del_spec_sumbols(line)
+        # Удаление спецсимволов ('\n' и тд)
+        line = str_del_spec_sumbols(line)
         
         obj_json = json.loads(line)
 
         _str = ""
+        # Приведение пустых значений к единому формату
         for id_, key in sorted(keys_sum.items()):
             s_ = str_del_spec_symbols(str(obj_json.get(key,'None')))
             if s_ in ('None','[]','',"''"):
