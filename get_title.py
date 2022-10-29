@@ -1,5 +1,20 @@
+# Создание шапки csv файла и определение необходимых полей(отдельно для каждого csv файла)
 
+# в файле 'title.tx' записываются поля
+# Ex:
+#   birth_date
+#   birth_year
+#   certifications
+#   certifications_end_date
+#   certifications_name
 
+# Необходимые поля оставляем, ненужные удаляем из файла, можно поменять местами поля. Если необходимо поменять имя поля для БД напротив поля добавить ':name'
+# Ex:
+#   birth_year
+#   birth_date
+#   certifications_name:promo
+
+# Если заранее известно, что ничего менять не нужно, комментируем 32 строчку
 
 def get_title(file_name, keys_in):
     keys_out = {}
@@ -14,7 +29,7 @@ def get_title(file_name, keys_in):
         f.write(keys_str)
     print("В файле 'title.txt' оставьте необходимые ключи следущием формале:\nKey1:Table key1\nKey2:Table key2\n.............\nKey999:Table key999\nгде Key - ключ из исходного файла,\nTable key - имя будущего поля в БД")
     
-    #input("Нажмите любую клавишу после обработки файла")
+    input("Нажмите любую клавишу после обработки файла")
 
     #!!!!!!title1 для проверки!!!!!!#
     with open("title.txt",'r',encoding='utf-8') as f:
