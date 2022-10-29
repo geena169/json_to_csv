@@ -1,3 +1,5 @@
+# Построчное чтение файла с помощью генератора
+
 from gzip import open as gz_open
 
 def json_line(file_name):
