@@ -53,7 +53,7 @@ def json_modify(json_input,file_output_name : str):
                                     obj_res[str(i)+"_"+str(k)] = v
                             
                                 else:
-                                    if not obj_res[last_key]:  # Если объект пустой, то вписыавем значение, иначе через запятую
+                                    if not obj_res[last_key]:  # Если объект пустой, то вписываем значение, иначе через запятую
                                         obj_res[last_key] = str(v)
                                     else:
                                         obj_res[last_key] = str(obj_res.get(last_key,'')) + ',' + str(v)
