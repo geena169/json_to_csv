@@ -27,7 +27,7 @@ def get_title(file_name, keys_in):
     keys_str = keys_str.rstrip('\n')
     with open('title.txt','w') as f:
         f.write(keys_str)
-    print("В файле 'title.txt' оставьте необходимые ключи следущием формале:\nKey1:Table key1\nKey2:Table key2\n.............\nKey999:Table key999\nгде Key - ключ из исходного файла,\nTable key - имя будущего поля в БД")
+    print("В файле 'title.txt' оставьте необходимые ключи следущием формате:\nKey1:Table key1\nKey2:Table key2\n.............\nKey999:Table key999\nгде Key - ключ из исходного файла,\nTable key - имя будущего поля в БД")
     
     input("Нажмите любую клавишу после обработки файла")
 
